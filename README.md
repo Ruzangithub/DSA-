@@ -1,2 +1,1 @@
-# DSA-
-lab1
+code of 3rd sem CSIT
