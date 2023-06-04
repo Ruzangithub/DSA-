@@ -10,8 +10,9 @@ int main()
     {
         cout<<"*";
     }
-    cout<<"\n";
+
     }
     
 } 
 //hello world
+//no push
