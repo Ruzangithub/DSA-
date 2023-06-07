@@ -7,15 +7,15 @@ double fun(double a)
     return exp(-a);
 }
 
-double FixedPoint(double x, double err, double maxiteration)
+double FixedPoint(double x, double err, double maxiterration)
 {
-    for(int i=0;i<maxiteration;i++)
+    for(int i=0; i<maxiterration; i++)
     {
         double xn=fun(x);
 
-        if (abs(xn-x)<err)
+        if (abs(xn-x) < err)
         {
-            cout<<"Converged after "<< i+1 <<" iteration "<<endl;
+            cout<<"Converged after "<< i+1 <<" iterration "<<endl;
             return xn;
         }
         x=xn;
