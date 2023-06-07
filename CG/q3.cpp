@@ -8,7 +8,8 @@ int Recursive(int arr[], int size)
     if (size == 0) 
     {
         return 0;  
-    } else 
+    } 
+    else 
     {
         return arr[size - 1] + Recursive(arr, size - 1);
 

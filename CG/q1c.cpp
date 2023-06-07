@@ -10,7 +10,7 @@ int main()
         {
             if(i==1 || i==4 || j==1 || j==9)
             {
-                cout<<"-";
+                cout<<"*";
             }
             else 
             {
