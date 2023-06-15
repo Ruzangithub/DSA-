@@ -17,12 +17,12 @@ double FixedPoint(double x, double err)
     while(nerr >err)
     {
         //xn = -log(fun(xo));
-        //xn = (1 - pow(x, 3)) / 2;
+        xn = (1 - pow(x, 3)) / 2;
         nerr = abs((xn - xo) / xn);
         xo = xn;
         iteration++;
     }
-    cout << "Estimated Root: " << xn << endl;
+   
     cout << "Functional Value at Root: " << fun(xn) << endl;
     cout << "Number of Iterations: " << iteration << endl;
     return xn;
@@ -39,7 +39,8 @@ int main()
     cin>>error;
 
     double root = FixedPoint(initial_guess,error);
-    
+
+     cout << "Estimated Root: " << root << endl;
     return 0;
 
 }
