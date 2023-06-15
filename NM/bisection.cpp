@@ -12,6 +12,7 @@ double equation(double x)
 double Bi(double a, double b, double err)
 {
     double c;
+    int iteration =0;
     while ((b-a)>=err)
     {
         c=(a+b)/2;
@@ -20,15 +21,19 @@ double Bi(double a, double b, double err)
         if (equation(c)*equation(a)<0)
             b=c;
         else
+        {
             a=c;
+        }
+       iteration++;     
     }
+    cout<<"iteration is :"<<iteration<<endl;
     return c;
 }
 
 int main()
 {
     double a,b,err;
-    cout<<"Enter the intervals :";
+    cout<<"Enter the initial values :";
     cin>>a>>b;
     cout<<"Enter the err tolorance :";
     cin>>err;
