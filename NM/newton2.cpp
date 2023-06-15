@@ -13,36 +13,35 @@ double dev(double x)
     return -sin(x) + 5;
 }
 
-double newtonMethod(double x0, double epsilon, int maxIterations) 
+double newtonMethod(double x, double err) 
 {
-    double x = x0;
+    double xn;
+    double nerr = 1.0;
     int iteration = 0;
     
-    while (abs(fun(x)) > epsilon && iteration < maxIterations) 
+    while (nerr > err)
     {
-        x = x - fun(x) / dev(x);
+        xn= x - (fun(x) / dev(x));
+        nerr = abs((xn- x) / xn);
+        x = xn;
         iteration++;
     }
-    
-    return x;
+    cout << "Number of Iterations: " << iteration << endl;
+    return xn;
 }
 
 int main() 
 {
     double initialGuess;
     double epsilon;
-    int maxIterations;
     
     cout << "Enter the initial guess: ";
     cin >> initialGuess;
     
     cout << "Enter the desired accuracy (epsilon): ";
     cin >> epsilon;
-    
-    cout << "Enter the maximum number of iterations: ";
-    cin >> maxIterations;
-    
-    double root = newtonMethod(initialGuess, epsilon, maxIterations);
+  
+    double root = newtonMethod(initialGuess, epsilon);
     
     if (abs(fun(root)) <= epsilon) 
     {
