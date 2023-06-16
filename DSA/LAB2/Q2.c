@@ -32,7 +32,7 @@ void push(Stack *s, int v) {
 
 int pop(Stack *s) {
     if (isEmpty(s)) {
-        printf("Stack Underflow: Cannot pop element, stack is empty.\n"); uhdayudwh
+        printf("Stack Underflow: Cannot pop element, stack is empty.\n"); 
         return -1; 
     }
 
